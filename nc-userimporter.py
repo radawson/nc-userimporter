@@ -269,7 +269,7 @@ def pwgenerator():
   PWDIG1 = random.SystemRandom().choice(string.digits)
   PWDIG2 = random.SystemRandom().choice(string.digits)
   PWDIG3 = random.SystemRandom().choice(string.digits)
-  PWSPEC = random.SystemRandom().choice('!@*(§')
+  PWSPEC = random.SystemRandom().choice('!@*(§#$%')
   PWD = None
   PWD = PWUPP + PWLOW1 + PWLOW2 + PWLOW3 + PWDIG1 + PWDIG2 + PWDIG3 + PWSPEC
   PWD = ''.join(random.sample(PWD,len(PWD)))
