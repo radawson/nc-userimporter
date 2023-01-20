@@ -27,6 +27,7 @@ from datetime import datetime
 # Copyright (C) 2019-2020 Torsten Markmann
 # Mail: info@uplinked.net 
 # WWW: edudocs.org uplinked.net
+# Modified 2023 Richard Dawson
 
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -48,7 +49,7 @@ print("# NEXTCLOUD-USER-IMPORTER                                                
 print("###################################################################################")
 print("")
 print("Copyright (C) 2019-2020 Torsten Markmann (t-markmann), edudocs.org & uplinked.net")
-print("Contributors: Johannes Schirge (Shen), Nicolas Stuhlfauth (nicostuhlfauth)")
+print("Contributors: Johannes Schirge (Shen), Nicolas Stuhlfauth (nicostuhlfauth), Richard Dawson (radawson)")
 print("This program comes with ABSOLUTELY NO WARRANTY")
 print("This is free software, and you are welcome to redistribute it under certain conditions.")
 print("For details look into LICENSE file (GNU GPLv3).")
@@ -59,7 +60,7 @@ print("")
 # Nextcloud group API https://docs.nextcloud.com/server/latest/admin_manual/configuration_user/instruction_set_for_groups.html
 # CURL to Python request converter https://curl.trillworks.com/
 
-# determine if running in a build package (frozen) or from seperate python script
+# determine if running in a build package (frozen) or from separate python script
 frozen = 'not'
 if getattr(sys, 'frozen', False):
   # we are running in a bundle
@@ -125,7 +126,7 @@ else:
   print("")
   print("")
   print("When you are sure that your settings in the config.xml are correct,")
-  print("press [ANY KEY] to continue.")
+  print("press [ENTER] to continue.")
   input("Otherwise, press [CONTROL + C] to abort the process.")
   print("")
   print("They have decided to continue. A user import preview is generated.")
@@ -140,7 +141,7 @@ if not os.path.isfile(config_csvfile):
     else:
       print("ERROR!")
       print("The csv-file (" + config_csvfile + ") you specified in you config.xml does not exist. Please save '" + config_csvfile + "' in main-directory of the script or edit your config.xml")
-      input("Press [ANY KEY] to confirm and end the process.")     
+      input("Press [ENTER] to confirm and end the process.")     
     sys.exit(1)
 
 # cut http and https from ncUrl, because people often just copy & paste including protocol
@@ -268,7 +269,7 @@ def pwgenerator():
   PWDIG1 = random.SystemRandom().choice(string.digits)
   PWDIG2 = random.SystemRandom().choice(string.digits)
   PWDIG3 = random.SystemRandom().choice(string.digits)
-  PWSPEC = random.SystemRandom().choice('!@*(§')
+  PWSPEC = random.SystemRandom().choice('!@*(§#$%')
   PWD = None
   PWD = PWUPP + PWLOW1 + PWLOW2 + PWLOW3 + PWDIG1 + PWDIG2 + PWDIG3 + PWSPEC
   PWD = ''.join(random.sample(PWD,len(PWD)))

@@ -1,10 +1,7 @@
-username,displayname,password,email,groups,subadmin,quota
-CASO-22-0404,CASO-22-0404,Ghostrider!0,,28 NOV CASO OE,,
-CASO-22-0405,CASO-22-0405,Ghostrider!0,,28 NOV CASO OE,,
-CASO-22-0406,CASO-22-0406,Ghostrider!0,,28 NOV CASO OE,,
-CASO-22-0407,CASO-22-0407,Ghostrider!0,,28 NOV CASO OE,,
-CASO-22-0408,CASO-22-0408,Ghostrider!0,,28 NOV CASO OE,,
-CASO-22-0409,CASO-22-0409,Ghostrider!0,,28 NOV CASO OE,,
-CASO-22-0410,CASO-22-0410,Ghostrider!0,,28 NOV CASO OE,,
-CASO-22-0411,CASO-22-0411,Ghostrider!0,,28 NOV CASO OE,,
-CASO-22-0412,CASO-22-0412,Ghostrider!0,,28 NOV CASO OE,,
+username;displayname;password;email;groups;subadmin;quota
+adoe;Alice Doe;alicepassword0001;;Lehrkraefte,SchuelerInnen;Lehrkraefte;5 GB
+broe;Bob Roe;bobpassword0001;;Lehrkraefte,jg01a;jg01a;100 MB
+csmith;Chris Smith;;;Lehrkraefte,SchuelerInnen;SchuelerInnen;1 GB
+Jhößer;Jörn Hößer;lkajsdflj98798klasdf;;Lehrkraefte;;1GB
+Åçì.Œñšú;Åçì Œñšú;lökajsdfoiwnnal28972nna;;Schulsozialarbeit,Sekretariat;Sekretariat, Schulsozialarbeit;
+kcline;Kevin Cline;;;Lehrkraefte;;
