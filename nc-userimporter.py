@@ -329,7 +329,7 @@ else:
     for row in readCSV:
       if (len(row) != 7): # check if number of columns is consistent
         print("ERROR: row for user",html.escape(row[0]),"has",len(row),"columns. Should be 7. Please correct your csv-file.")
-        input("Press [ANY KEY] to confirm and end the process.")
+        input("Press [ENTER] to confirm and end the process.")
         sys.exit(1)
       pass_anon = html.escape(row[2])
       if len(pass_anon) > 0:
@@ -344,7 +344,7 @@ else:
   print("\nPlease check if the users and groups above are as expected and should be created like that.")
   if not config_GeneratePassword == 'yes':
     print ("ATTENTION: You have specified that users for whom no password has been entered will receive an e-mail to set a password for themselves. Please make absolutely sure that a correct e-mail address is entered for every user for whom no password has been set!")
-  input("If everything is fine, press [ANY KEY] to continue. If not, press [CONTROL + C] to cancel.")
+  input("If everything is fine, press [ENTER] to continue. If not, press [CONTROL + C] to cancel.")
   print("\nYou confirmed. I will now create the users and groups. This can take a long time...\n")
 
 # prepare pdf-output (if pdfOneDoc == yes)
@@ -415,7 +415,7 @@ with codecs.open(os.path.join(appdir, config_csvfile),mode='r', encoding='utf-8'
      except requests.exceptions.RequestException as e:  # handling errors
        print(e)
        print("The CURL request could not be performed.")
-       input("Press [ANY KEY] to confirm and end the process.")
+       input("Press [ENTER] to confirm and end the process.")
        sys.exit(1)
 
      response_xmlsoup = BeautifulSoup(groupresponse.text, "html.parser")
@@ -431,7 +431,7 @@ with codecs.open(os.path.join(appdir, config_csvfile),mode='r', encoding='utf-8'
        except requests.exceptions.RequestException as e:  # handling errors
          print(e)
          print("The CURL request could not be performed.")
-         input("Press [ANY KEY] to confirm and end the process.")
+         input("Press [ENTER] to confirm and end the process.")
          sys.exit(1)
        response_xmlsoup = BeautifulSoup(groupresponse.text, "html.parser")
 
@@ -439,7 +439,7 @@ with codecs.open(os.path.join(appdir, config_csvfile),mode='r', encoding='utf-8'
        if groupresponse.status_code != 200:
         print("HTTP Status: " + str(groupresponse.status_code))
         print("Your config.xml is wrong or your cloud is not reachable.")
-        input("Press [ANY KEY] to confirm and end the process.")
+        input("Press [ENTER] to confirm and end the process.")
         sys.exit(1)
 
       # show detailed info of response (create group)
@@ -466,14 +466,14 @@ with codecs.open(os.path.join(appdir, config_csvfile),mode='r', encoding='utf-8'
     except requests.exceptions.RequestException as e:  # handling errors
       print(e)
       print("The CURL request could not be performed.")
-      input("Press [ANY KEY] to confirm and end the process.")
+      input("Press [ENTER] to confirm and end the process.")
       sys.exit(1)
 
     # catch wrong config
     if response.status_code != 200:
       print("HTTP Status: " + str(response.status_code))
       print("Your config.xml is wrong or your cloud is not reachable.")
-      input("Press [ANY KEY] to confirm and end the process.")
+      input("Press [ENTER] to confirm and end the process.")
       sys.exit(1)
 
     # show detailed info of response
@@ -644,4 +644,4 @@ else:
   print("# For security reasons: please delete your credentials from config.xml            #")
   print("###################################################################################")
   print("")
-  input("Press [ANY KEY] to confirm and end the process.")
+  input("Press [ENTER] to confirm and end the process.")
